@@ -1,0 +1,44 @@
+/* Importar fuente para el formulario */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Custom propertis o variables globales */
+:root{
+  --font-montserrat: "Montserrat", sans-serif;
+  --primary: #232D3F ;
+  --secondary: #005B41 ;
+  --terciary: #008170 ;
+  --meBlack: #0F0F0F ;
+  --meWhite: #FBF9F1 ;
+}
+
+/* Seteo global */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-montserrat);
+}
+
+/* Estilos para el body */
+body{
+  background: var(--secondWhite);
+}
+
+/* Estilos del container */
+.container{
+  width: 100vw;
+  height: 100vh;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: block;
+  padding: 10px;
+}
+
+/* Estilos del contenedor de las cards */
+.cards{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

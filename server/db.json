@@ -1,0 +1,31 @@
+{
+  "users": [],
+  "documentos": [
+    {
+      "id": 1,
+      "tipoDocumento": "C.C"
+    },
+    {
+      "id": 2,
+      "tipoDocumento": "T.I"
+    },
+    {
+      "id": 3,
+      "tipoDocumento": "P.P.T"
+    },
+    {
+      "id": 4,
+      "tipoDocumento": "L.B"
+    }
+  ],
+  "generos": [
+    {
+      "id": 1,
+      "genero": "Masculino"
+    },
+    {
+      "id": 2,
+      "genero": "Femenino"
+    }
+  ]
+}

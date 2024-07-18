@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/styles/style.css">
+  <title>formulario</title>
+</head>
+<body>
+  <main class="container">
+    <section class="cards">
+      <article class="card">
+        <div class="card__title">
+          <h1>
+            Registro de personas
+          </h1>
+        </div>
+        <div class="card__body">
+          <form action="" class="card__form">
+            <div class="card__campo">
+              <label for="name">Nombre</label>
+              <input type="text" class="card__input">
+            </div>
+            <div class="card__campo">
+              <label for="apellido">Apellido</label>
+              <input type="text" class="card__input">
+            </div>
+            <div class="card__campo">
+              <label for="tipoDocumento">Tipo de documento</label>
+              <select name="opciones" id=""tipoDocumento class="card__input">
+              </select>
+            </div>
+            <div class="card__campo">
+              <label for="numDocumento">Numero de documento</label>
+              <input type="text" class="card__input">
+            </div>
+            <div class="card__campo">
+              <label for="email">Correo electronico</label>
+              <input type="text" class="card__input">
+            </div>
+            <div class="card__campo">
+              <label for="genero">Genero</label>
+              <input type="text" class="card__input">
+            </div>
+            <div class="card__campo">
+              <button type="submit" class="card__btn">
+                Registrar
+              </button>
+            </div>
+          </form>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script type="module" src="src/scripts/app.js"></script>
+</body>
+</html>

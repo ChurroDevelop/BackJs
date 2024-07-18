@@ -1,0 +1,58 @@
+/* Importar las custom propertis */
+@import url(root.css);
+
+/* Estilos de la card */
+.card{
+  color: var(--meWhite);
+  background: var(--primary);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+/* Estilos del titulo de la card */
+.card__title > h1{
+  font-size: 1.6em;
+}
+
+/* Estilos del formularop */
+.card__form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Estilos de los div que estan dentro del formulario */
+.card__campo{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start; 
+  gap: 5px;
+}
+
+.card__input{
+  padding: 5px;
+  width: 100%;
+  background: var;
+}
+
+/* Estilos del boton */
+.card__btn{
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all .2s ease;
+  color: var(--meBlack);
+  font-weight: bold;
+}
+.card__btn:hover{
+  background: var(--terciary);
+}

@@ -3,15 +3,23 @@
 
 /* Estilos de la card */
 .card{
+  width: 40%;
   color: var(--meWhite);
   background: var(--primary);
   padding: 20px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
   text-align: center;
   border: 1px solid black;
   border-radius: 20px;
+}
+
+/* Estilos para el cuerpo de la card */
+.card__body{
+  width: 100%;
+  max-width: 300px;
 }
 
 /* Estilos del titulo de la card */
@@ -19,12 +27,12 @@
   font-size: 1.6em;
 }
 
-/* Estilos del formularop */
+/* Estilos del formulario */
 .card__form{
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 /* Estilos de los div que estan dentro del formulario */
@@ -33,13 +41,31 @@
   display: flex;
   flex-direction: column;
   align-items: start; 
-  gap: 5px;
+  gap: 3px;
 }
 
+/* Modificador de la metodologia BEM */
+.card__campo--row{
+  flex-direction: row;
+  font-size: 12px;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Estilos para los inputs */
 .card__input{
-  padding: 5px;
+  padding: 5px 15px;
   width: 100%;
   background: var;
+  border-radius: 20px;
+  transition: .2s all ease;
+}
+.card__input:focus{
+  outline: 3px groove var(--cuarty);
+}
+.card__input--check{
+  width: 1rem;
+  height: 1rem;
 }
 
 /* Estilos del boton */

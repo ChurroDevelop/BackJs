@@ -1,0 +1,18 @@
+@import url(root.css);
+
+.card__table{
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card__table > div > h1 {
+    font-size: 1.6em;
+}
+
+.table__head{
+    background: red;
+    width: 2em;
+}

@@ -84,5 +84,8 @@
 }
 
 .is__invalid{
-  border: 1px solid red;
+  border: 3px solid red;
+}
+.is__valid{
+  border: 3px solid green;
 }

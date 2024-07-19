@@ -24,18 +24,38 @@ export const check = (checkBox, btn) => {
   }
 }
 
-// Exportar modulo de las validaciones de formulario
-export const validarCampos = (...inputs) => {
+// Exportar modulo para las validaciones de los inputs
+export const validarInputs = (...inputs) => {
   let $estado = true;
   inputs.forEach((e) => {
     e.forEach((element) => {
-      if (element.value === "") {
+      if (element.value.trim() === "") {
         console.log(element.value)
         element.classList.add("is__invalid");
         $estado = false;
       }
       else {
-        console.log(element.value)
+        element.classList.remove("is__invalid");
+        element.classList.add("is__valid");
+      }
+    })
+  })
+  return $estado;
+}
+
+// Exportar modulo para las validaciones delos selects
+export const validarSelects = (...selects) => {
+  let $estado = true;
+  selects.forEach((e) => {
+    e.forEach((element) => {
+      if (element.value.trim() === "") {
+        console.log(element.value);
+        element.classList.add("is__invalid");
+        $estado = false;
+      }
+      else {
+        element.classList.remove("is__invalid");
+        element.classList.add("is__valid");
       }
     })
   })

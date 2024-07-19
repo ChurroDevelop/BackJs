@@ -1,6 +1,6 @@
 // Importar modulo para manejarlo modularizado
 import { tipoDocs, generos, createUser } from './module.js';
-import { numeros, texto, check, validarCampos } from './permisos.js';
+import { numeros, texto, check, validarInputs, validarSelects } from './permisos.js';
 
 // Atrapar los elementos a manipular
 const $dom = document;
@@ -16,8 +16,8 @@ const $checkbox = $dom.querySelector("#checkbox");
 const $btnForm = $dom.querySelector("#btnForm");
 const $fragmentoDocs = $dom.createDocumentFragment();
 const $fragmentoGeneros = $dom.createDocumentFragment();
-
 const $inputsAll = $dom.querySelectorAll("input");
+const $selectAll = $dom.querySelectorAll("select");
 
 // Campo para cargar los documentos
 tipoDocs()
@@ -52,11 +52,12 @@ generos()
 // Funcion para enviar el formulario con los datos obtenidos
 async function enviarForm (event) {
 
-  let $estado = validarCampos($inputsAll)
+  let $estadoInputs = validarInputs($inputsAll);
+  let $estadoSelects = validarSelects($selectAll);
   event.preventDefault();
 
-  if (!$estado) {
-    console.log("No se puede")
+  if (!$estadoInputs || !$estadoSelects) {
+    console.log("No se puede mandar el formulario campos incompletos");
   }
   else {
     const dataUser = {

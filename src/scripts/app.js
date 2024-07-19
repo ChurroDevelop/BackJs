@@ -1,6 +1,6 @@
 // Importar modulo para manejarlo modularizado
 import { tipoDocs, generos, createUser } from './module.js';
-import { numeros, texto, check } from './permisos.js';
+import { numeros, texto, check, validarCampos } from './permisos.js';
 
 // Atrapar los elementos a manipular
 const $dom = document;
@@ -16,6 +16,8 @@ const $checkbox = $dom.querySelector("#checkbox");
 const $btnForm = $dom.querySelector("#btnForm");
 const $fragmentoDocs = $dom.createDocumentFragment();
 const $fragmentoGeneros = $dom.createDocumentFragment();
+
+const $inputsAll = $dom.querySelectorAll("input");
 
 // Campo para cargar los documentos
 tipoDocs()
@@ -48,26 +50,34 @@ generos()
   })
 
 // Funcion para enviar el formulario con los datos obtenidos
-async function enviarForm (e) {
-  const dataUser = {
-    id: Math.floor(Math.random() * 100).toString(),
-    nombre: $name.value,
-    apellido: $apellido.value,
-    tipoDocumento: $tipoDocumento.value,
-    numDocumento: $numDocumento.value,
-    email: $email.value,
-    genero: $genero.value,
-    telefono: $telefono.value
+async function enviarForm (event) {
+
+  let $estado = validarCampos($inputsAll)
+  event.preventDefault();
+
+  if (!$estado) {
+    console.log("No se puede")
   }
-  $name.value = '';
-  $apellido.value = '';
-  $tipoDocumento.value = '';
-  $numDocumento.value = '';
-  $email.value = '';
-  $genero.value = '';
-  $telefono.value = '';
-  e.preventDefault();
-  await createUser(dataUser);
+  else {
+    const dataUser = {
+      id: Math.floor(Math.random() * 100).toString(),
+      nombre: $name.value,
+      apellido: $apellido.value,
+      tipoDocumento: $tipoDocumento.value,
+      numDocumento: $numDocumento.value,
+      email: $email.value,
+      genero: $genero.value,
+      telefono: $telefono.value
+    }
+    $name.value = '';
+    $apellido.value = '';
+    $tipoDocumento.value = '';
+    $numDocumento.value = '';
+    $email.value = '';
+    $genero.value = '';
+    $telefono.value = '';
+    await createUser(dataUser);
+  }
 }
 
 // Manejo de eventos

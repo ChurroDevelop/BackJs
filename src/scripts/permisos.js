@@ -23,3 +23,21 @@ export const check = (checkBox, btn) => {
     console.log("No esta listo para mandar");
   }
 }
+
+// Exportar modulo de las validaciones de formulario
+export const validarCampos = (...inputs) => {
+  let $estado = true;
+  inputs.forEach((e) => {
+    e.forEach((element) => {
+      if (element.value === "") {
+        console.log(element.value)
+        element.classList.add("is__invalid");
+        $estado = false;
+      }
+      else {
+        console.log(element.value)
+      }
+    })
+  })
+  return $estado;
+}

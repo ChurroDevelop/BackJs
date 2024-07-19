@@ -58,7 +58,7 @@
   width: 100%;
   background: var;
   border-radius: 20px;
-  transition: .2s all ease;
+  transition: .05s all ease;
 }
 .card__input:focus{
   outline: 3px groove var(--cuarty);
@@ -81,4 +81,8 @@
 }
 .card__btn:hover{
   background: var(--terciary);
+}
+
+.is__invalid{
+  border: 1px solid red;
 }

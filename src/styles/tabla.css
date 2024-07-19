@@ -1,18 +1,69 @@
 @import url(root.css);
+.cont__tabla{
+    width: 100vw;
+    height: 100vh;
+}
 
-.card__table{
-    padding: 20px;
-    text-align: center;
+.tabla__cards{
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.tabla__card{
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.card__table > div > h1 {
+.tabla__title > h1{
     font-size: 1.6em;
+    text-align: center;
 }
 
-.table__head{
-    background: red;
-    width: 2em;
+.tabla__body{
+    width: 100%;
+}
+
+.table{
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+}
+
+th {
+    padding: 5px 10px;
+}
+
+td{
+    font-size: 0.9em;
+}
+
+.acciones {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.acciones > button, .acciones > button > a {
+    color: var(--meBlack);
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.1s;
+}
+
+.acciones > button:hover, .acciones > button:hover > a{
+    cursor: pointer;
+    color: var(--meWhite);
+    background: var(--terciary);
+}
+
+@media screen and (max-width: 1028px) {
+    .tabla__body{
+        overflow-x: scroll;
+    }
 }

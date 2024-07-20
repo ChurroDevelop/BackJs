@@ -75,6 +75,7 @@
   border: none;
   cursor: pointer;
   width: 100%;
+  max-width: 300px;
   padding: 10px;
   border-radius: 10px;
   transition: all .2s ease;

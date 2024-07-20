@@ -19,6 +19,46 @@
       "email": "carlos@gmail.com",
       "genero": "Femenino",
       "telefono": "7418528520"
+    },
+    {
+      "id": "60",
+      "nombre": "Carlos",
+      "apellido": "Garcias",
+      "tipoDocumento": "C.C",
+      "numDocumento": "7418596385",
+      "email": "carlos@gmail.com",
+      "genero": "Masculino",
+      "telefono": "1234567890"
+    },
+    {
+      "id": "27",
+      "nombre": "Cristian",
+      "apellido": "Silva",
+      "tipoDocumento": "C.C",
+      "numDocumento": "45465656",
+      "email": "cristian@gmail.com",
+      "genero": "Femenino",
+      "telefono": "7418528520"
+    },
+    {
+      "id": "6",
+      "nombre": "Samuel",
+      "apellido": "Careño",
+      "tipoDocumento": "C.C",
+      "numDocumento": "9999999999",
+      "email": "samuel@gmail.com",
+      "genero": "Masculino",
+      "telefono": "Masculino"
+    },
+    {
+      "id": "6737",
+      "nombre": "Yesid",
+      "apellido": "Pabon Corredor",
+      "tipoDocumento": "C.C",
+      "numDocumento": "7452375634",
+      "email": "yesid@gmail.com",
+      "genero": "Masculino",
+      "telefono": "Femenino"
     }
   ],
   "documentos": [

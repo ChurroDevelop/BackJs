@@ -12,12 +12,19 @@ export const generos = async () => {
   return response;
 };
 
-// Exportar funcion para visualizar los usuarios
-export const reedUser = async () => {
+// Exportar funcion para visualizar todos los usuarios
+export const reedUsers = async () => {
   let request = await fetch(`http://localhost:3000/users`);
   let response = await request.json();
   return response;
 };
+
+// Exportar funcion para visualizar un usuario en especifico
+export const leerUser = async (userId) => {
+  let request = await fetch(`http://localhost:3000/users/${userId}`);
+  let response = await request.json();
+  return response;
+}
 
 // Exportar funcion para crear el usuario
 export const createUser = async (dataUser) => {
@@ -28,8 +35,20 @@ export const createUser = async (dataUser) => {
       "Content-type": "application/json; charset=UTF-8",
     },
   });
-  let response = await request.json();
 };
+
+// Exportar funcion para modificar un usuario
+export const modifyUser = async (userId, objectUser) => {
+  let request = await fetch(`http://localhost:3000/users/${userId}`, {
+    method: "PUT",
+    body: JSON.stringify(objectUser),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8'
+    }
+  });
+  let response = await request.json();
+  return response;
+}
 
 // Exportar funcion para eliminar un usuario
 export const deleteUser = async (userId) => {

@@ -1,5 +1,5 @@
 // Importar modulo para la agregarlos a la tabla
-import { reedUser, deleteUser } from "./module.js";
+import { deleteUser, reedUsers, leerUser } from "./module.js";
 
 // Atrapar elementos del DOM
 const $dom = document;
@@ -10,8 +10,14 @@ const eliminarUsuario = async (userId) => {
   await deleteUser(userId);
 }
 
+const modificarUser = async (userId) => {
+  let user = await leerUser(userId);
+  localStorage.setItem("editarUser", JSON.stringify(user));
+  window.location.href = "../../index.html";
+}
+
 // Recorrer la funcion y obtener los datos
-reedUser()
+reedUsers()
   .then((e) => {
     e.forEach((user) => {
       // Crear elementos para agregar a la tabla
@@ -44,12 +50,12 @@ reedUser()
       
       // Agregar atributos y contenido
       $btnModificar.setAttribute("data-id", user.id);
-      $enlace.href = "editar.html";
+      $btnModificar.setAttribute("id", "btnModificar");
       $enlace.textContent = "Editar";
       $btnModificar.appendChild($enlace);
       $btnEliminar.setAttribute("data-id", user.id);
-      $btnEliminar.textContent = "Eliminar";
       $btnEliminar.setAttribute("id", "btnDelete");
+      $btnEliminar.textContent = "Eliminar";
 
       // Agregar los botones al la ultima columna
       $td9.appendChild($btnModificar);
@@ -68,6 +74,11 @@ reedUser()
       $fragmentTabla.appendChild($tr);
     })
     $tabla.appendChild($fragmentTabla);
+
+    const $btnModify = $dom.querySelectorAll("#btnModificar");
+    $btnModify.forEach((btn) => {
+      btn.addEventListener("click", () => modificarUser(btn.getAttribute("data-id")));
+    })
 
     const $btnDelete = $dom.querySelectorAll("#btnDelete");
     $btnDelete.forEach((button) => {

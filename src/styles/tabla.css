@@ -1,69 +1,74 @@
 @import url(root.css);
-.cont__tabla{
-    width: 100vw;
-    height: 100vh;
+
+.cont__tabla {
+  width: 100vw;
+  height: 100vh;
 }
 
-.tabla__cards{
-    width: 100%;
-    max-width: 90%;
-    margin: 0 auto;
+.tabla__cards {
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
-.tabla__card{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.tabla__card {
+  padding: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.tabla__title > h1{
-    font-size: 1.6em;
-    text-align: center;
+.tabla__title>h1 {
+  font-size: 1.6em;
+  text-align: center;
 }
 
-.tabla__body{
-    width: 100%;
+.tabla__body {
+  width: 100%;
 }
 
-.table{
-    width: 100%;
-    max-width: 80%;
-    margin: 0 auto;
-    padding: 30px;
-    text-align: center;
+.table {
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
 }
 
 th {
-    padding: 5px 10px;
+  padding: 5px 10px;
 }
 
-td{
-    font-size: 0.9em;
+td {
+  font-size: 0.9em;
+  padding: 5px;
 }
 
 .acciones {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
-.acciones > button, .acciones > button > a {
-    color: var(--meBlack);
-    text-decoration: none;
-    border: none;
-    border-radius: 4px;
-    transition: all 0.1s;
+.acciones>button,
+.acciones>button>a {
+  color: var(--meBlack);
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.1s;
 }
 
-.acciones > button:hover, .acciones > button:hover > a{
-    cursor: pointer;
-    color: var(--meWhite);
-    background: var(--terciary);
+.acciones>button:hover,
+.acciones>button:hover>a {
+  cursor: pointer;
+  color: var(--meWhite);
+  background: var(--terciary);
 }
 
 @media screen and (max-width: 1028px) {
-    .tabla__body{
-        overflow-x: scroll;
-    }
+  .tabla__body {
+    overflow-x: scroll;
+  }
 }

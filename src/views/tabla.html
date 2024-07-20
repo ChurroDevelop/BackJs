@@ -1,55 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla de usuarios</title>
-    <link rel="stylesheet" href="../styles/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla de usuarios</title>
+  <link rel="stylesheet" href="../styles/style.css">
 </head>
+
 <body>
-    <main class="cont__tabla">
-        <section class="tabla__cards">
-            <article class="tabla__card">
-                <div class="tabla__title">
-                    <h1>
-                        Tabla de usuarios registrados
-                    </h1>
-                </div>
-                <div class="tabla__body">
-                    <table class="table">
-                        <thead class="table__head">
-                            <th>Id</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Tipo de documento</th>
-                            <th>Numero de documento</th>
-                            <th>Correo electronico</th>
-                            <th>Genero</th>
-                            <th>Numero telefonico</th>
-                            <th>Acciones</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Jhon</td>
-                                <td>Carreño</td>
-                                <td>C.C</td>
-                                <td>1099737501</td>
-                                <td>jhonfredy2325@gmail.com</td>
-                                <td>Masculino</td>
-                                <td>3186040819</td>
-                                <td class="acciones">
-                                    <button data-id="1" class="btn">
-                                        <a href="editar.html">Editar</a>
-                                    </button>
-                                    <button data-id="1">Eliminar</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </article>
-        </section>
-    </main>
+  <main class="cont__tabla">
+    <section class="tabla__cards">
+      <article class="tabla__card">
+        <div class="tabla__title">
+          <h1>
+            Tabla de usuarios registrados
+          </h1>
+        </div>
+        <div class="tabla__body">
+          <table class="table">
+            <thead class="table__head">
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Tipo de documento</th>
+              <th>Numero de documento</th>
+              <th>Correo electronico</th>
+              <th>Genero</th>
+              <th>Numero telefonico</th>
+              <th>Acciones</th>
+            </thead>
+            <tbody id="tablaBody">
+              <tr>
+                <td>1</td>
+                <td>Jhon</td>
+                <td>Carreño</td>
+                <td>C.C</td>
+                <td>1099737501</td>
+                <td>jhonfredy2325@gmail.com</td>
+                <td>Masculino</td>
+                <td>3186040819</td>
+                <td class="acciones">
+                  <button data-id="1">
+                    <a href="editar.html">Editar</a>
+                  </button>
+                  <button data-id="1">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script src="../scripts/tabla.js" type="module"></script>
 </body>
+
 </html>

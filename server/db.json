@@ -1,5 +1,25 @@
 {
   "users": [
+    {
+      "id": "24",
+      "nombre": "Karim",
+      "apellido": "Castillo",
+      "tipoDocumento": "C.C",
+      "numDocumento": "4567891233",
+      "email": "karim@gmail.com",
+      "genero": "Masculino",
+      "telefono": "4578123681"
+    },
+    {
+      "id": "45",
+      "nombre": "Daniel",
+      "apellido": "Zayas",
+      "tipoDocumento": "T.I",
+      "numDocumento": "4567891233",
+      "email": "carlos@gmail.com",
+      "genero": "Femenino",
+      "telefono": "7418528520"
+    }
   ],
   "documentos": [
     {

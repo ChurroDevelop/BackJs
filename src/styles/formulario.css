@@ -102,3 +102,8 @@
 .is__valid {
   border: 3px solid green;
 }
+
+.span__danger{
+  font-size: 0.7em;
+  color: red;
+}

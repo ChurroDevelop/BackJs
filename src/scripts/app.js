@@ -1,5 +1,5 @@
 // Importar modulo para manejarlo modularizado
-import { tipoDocs, generos, createUser, modifyUser } from './module.js';
+import peticion from './module.js';
 import { numeros, texto, check, validarInputs, validarSelects } from './permisos.js';
 
 // Atrapar los elementos a manipular
@@ -21,7 +21,7 @@ const $inputsAll = $dom.querySelectorAll("input");
 const $selectAll = $dom.querySelectorAll("select");
 
 // Campo para cargar los documentos
-tipoDocs()
+peticion("documentos")
   .then((response) => {
     response.forEach((element) => {
       const $option = $dom.createElement("option");
@@ -36,7 +36,7 @@ tipoDocs()
   })
 
 // Campo para cargar los generos
-generos()
+peticion("generos")
   .then((response) => {
     response.forEach((element) => {
       const $option = $dom.createElement("option");
@@ -50,9 +50,9 @@ generos()
     console.log(error);
   })
 // Obtener datos del usuario a modificar
-const $datosUser = localStorage.getItem("editarUser");
+let $datosUser = localStorage.getItem("editarUser");
+let $user = JSON.parse($datosUser);
 if ($datosUser) {
-  const $user = JSON.parse($datosUser);
   $hiddenId.value = $user.id;
   $name.value = $user.nombre;
   $apellido.value = $user.apellido;
@@ -60,7 +60,7 @@ if ($datosUser) {
   $numDocumento.value = $user.numDocumento;
   $email.value = $user.email;
   $genero.value = $user.genero;
-  $telefono.value = $user.genero;
+  $telefono.value = $user.telefono;
   $btnForm.textContent = "Modificar usuario";
   localStorage.removeItem("editarUser");
 }
@@ -68,28 +68,20 @@ else {
   $hiddenId.value = Math.floor(Math.random() * 10000).toString();
 }
 
-let tiempo = setInterval(() => {
-  if ($datosUser === null) {
-    console.log("Ya se vacio la session");
-    $hiddenId.value = Math.floor(Math.random() * 10000).toString();
-    $name.value = '';
-    $apellido.value = '';
-    $tipoDocumento.value = '';
-    $numDocumento.value = '';
-    $email.value = '';
-    $genero.value = '';
-    $telefono.value = '';
-    clearInterval(tiempo);
-  }
-}, 1000)
+if ($datosUser === null) {
+  let tiempo = setInterval(() => {
+      console.log("Ya se vacio la session");
+      clearInterval(tiempo);
+  }, 1000)
+}
+
 
 // Funcion para enviar el formulario con los datos obtenidos
 async function enviarForm (event) { 
   let $estadoInputs = validarInputs($inputsAll);
   let $estadoSelects = validarSelects($selectAll);
-  
   event.preventDefault();
-  if ($hiddenId.value) {
+  if ($user !== null) {
     console.log("Ya existe ete usuario");
     const $dataUser = {
       id: $hiddenId.value,
@@ -101,11 +93,11 @@ async function enviarForm (event) {
       genero: $genero.value,
       telefono: $telefono.value
     }
-    await modifyUser($hiddenId.value, $dataUser);
+    await peticion("users", $hiddenId.value, "PUT", $dataUser);
     console.log("Usuario modificado");
+    localStorage.removeItem("editarUser");
   }
   else {
-
     if (!$estadoInputs || !$estadoSelects) {
       console.log("No se puede mandar el formulario campos incompletos");
     }
@@ -128,7 +120,7 @@ async function enviarForm (event) {
       $genero.value = '';
       $telefono.value = '';
       event.preventDefault();
-      await createUser(dataUser);
+      await peticion("users", "", "POST", dataUser);
     }
   }
 
@@ -140,4 +132,6 @@ $name.addEventListener("keypress", () => texto(event, $name));
 $apellido.addEventListener("keypress", () => texto(event, $apellido));
 $numDocumento.addEventListener("keypress", () => numeros(event, $numDocumento));
 $telefono.addEventListener("keypress", () => numeros(event, $telefono));
-$checkbox.addEventListener("click", () => check($checkbox, $btnForm));
+$checkbox.addEventListener("change", () => { 
+  check($checkbox, $btnForm);
+});

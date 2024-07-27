@@ -82,7 +82,11 @@
   color: var(--meBlack);
   font-weight: bolder;
 }
+.card__btn:hover {
+  background: var(--terciary);
+}
 
+/* Estilos para el enlace de la tabla */
 .card__enlace {
   width: 100%;
   font-size: 0.8em;
@@ -91,18 +95,13 @@
   font-weight: bolder;
 }
 
-.card__btn:hover {
-  background: var(--terciary);
-}
-
+/* Estilos para las validaciones de los formularios */
 .is__invalid {
   border: 3px solid red;
 }
-
 .is__valid {
   border: 3px solid green;
 }
-
 .span__danger{
   font-size: 0.7em;
   color: red;

@@ -1,16 +1,20 @@
+/* Importar custom propertis */
 @import url(root.css);
 
+/* Container de la tabla */
 .cont__tabla {
   width: 100vw;
   height: 100vh;
 }
 
+/* Contenedor de las cards de la tabla */
 .tabla__cards {
   width: 100%;
   max-width: 90%;
   margin: 0 auto;
 }
 
+/* Estilos para las columnas de la tabla */
 .tabla__card {
   padding: 50px;
   width: 100%;
@@ -19,15 +23,18 @@
   gap: 20px;
 }
 
+/* Estilos para los h1 que esten en la clase .tabla__title */
 .tabla__title>h1 {
   font-size: 1.6em;
   text-align: center;
 }
 
+/* Estilos para el cuerpo de la tabla */
 .tabla__body {
   width: 100%;
 }
 
+/* Estilos para la clase table */
 .table {
   width: 100%;
   max-width: 80%;
@@ -36,21 +43,23 @@
   text-align: center;
 }
 
+/* Estilos para los th y td */
 th {
   padding: 5px 10px;
 }
-
 td {
   font-size: 0.9em;
   padding: 5px;
 }
 
+/* Estilos para la columna de las acciones */
 .acciones {
   display: flex;
   flex-direction: column;
   gap: 3px;
 }
 
+/* Estilos para los botones de las tablas */
 .acciones>button,
 .acciones>button>a {
   color: var(--meBlack);
@@ -59,7 +68,6 @@ td {
   border-radius: 4px;
   transition: all 0.1s;
 }
-
 .acciones>button:hover,
 .acciones>button:hover>a {
   cursor: pointer;
@@ -67,6 +75,7 @@ td {
   background: var(--terciary);
 }
 
+/* Media query para el responsive de la tabla */
 @media screen and (max-width: 1028px) {
   .tabla__body {
     overflow-x: scroll;
